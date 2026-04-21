@@ -1,0 +1,61 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+
+    {
+      "Sid": "AllowTranslate",
+      "Effect": "Allow",
+      "Action": [
+        "translate:TranslateText",
+        "translate:ListTerminologies"
+      ],
+      "Resource": "*"
+    },
+
+    {
+      "Sid": "AllowPolly",
+      "Effect": "Allow",
+      "Action": [
+        "polly:SynthesizeSpeech",
+        "polly:DescribeVoices"
+      ],
+      "Resource": "*"
+    },
+
+    {
+      "Sid": "AllowS3AudioBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::jp-translator-audio/*"
+    },
+
+    {
+      "Sid": "AllowS3HistoryBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::jp-translator-history",
+        "arn:aws:s3:::jp-translator-history/*"
+      ]
+    },
+
+    {
+      "Sid": "AllowCloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    }
+
+  ]
+}
