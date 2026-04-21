@@ -24,6 +24,18 @@ A serverless web application that translates text between Japanese and English, 
 
 ---
 
+## Architecture 
+
+<p align="center">
+  <img src="./architecture.png" alt="AWS Serverless Architecture" width="750">
+</p>
+
+<p align="center">
+  <em>Serverless flow using API Gateway, Lambda, Translate, Polly, and S3</em>
+</p>
+
+---
+
 ## Prerequisites
 
 ```bash
